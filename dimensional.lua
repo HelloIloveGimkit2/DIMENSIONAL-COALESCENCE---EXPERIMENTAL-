@@ -76,11 +76,11 @@ local spamrush = Tabs.Main:AddToggle("spamrushlol",
 })
 
 local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
-    Title = "Dropdown",
-    Description = "Dropdown description",
+    Title = "Become a character",
+    Description = "can be the same as someone else\'s",
     Values = {"bendy", "boris", "cream", "monika", "sayori", "sonic", "sonic.exe", "vanilla"},
     Multi = false,
-    Default = 1,
+    Default = false,
 })
 
 Dropdown:OnChanged(function(Value)
