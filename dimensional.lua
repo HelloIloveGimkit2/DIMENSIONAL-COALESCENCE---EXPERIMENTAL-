@@ -23,7 +23,7 @@ local Tabs = {
 
 local spamdamage = Tabs.Main:AddToggle("spamdamage",
 {
-    Title = "Spam damage everyone (must be sonic.exe)",
+    Title = "Spam damage everyone",
     Description = "Spam damage everyone",
     Default = false,
     Callback = function(state)
@@ -43,7 +43,7 @@ local spamdamage = Tabs.Main:AddToggle("spamdamage",
 local godmodecuphead = Tabs.Main:AddToggle("godmodelol",
 {
     Title = "give urself godmode constantly (cuphead)",
-    Description = "not tested with other characters but might work",
+    Description = "tested with other characters they work work",
     Default = false,
     Callback = function(state)
         while state == true do task.wait()
@@ -56,8 +56,8 @@ local godmodecuphead = Tabs.Main:AddToggle("godmodelol",
 
 local spamrush = Tabs.Main:AddToggle("spamrushlol", 
 {
-    Title = "Sapm rush with vanilla",
-    Description = "RUSH THE EVERYONE",
+    Title = "Sapm rush with vanilla and other characters",
+    Description = "RUSH EVERYONE",
     Default = false,
     Callback = function(state)
         local players = game.Players
@@ -88,32 +88,3 @@ local ohString1 = Value
 
 game:GetService("ReplicatedStorage").Remotes.inSelection.characterSelectionControlEvent:FireServer(ohString1)
 end)
-
-local Toggle = Tabs.Main:AddToggle("MyToggle", 
-{
-    Title = "Invisibility", 
-    Description = "Sonic.exe NO EXPIRATION",
-    Default = false,
-    Callback = function(state)
-        local Player = game.Players.LocalPlayer
-local highlight = Instance.new("Highlight")
-	if state then
-        local ohBoolean1 = true
-local ohString2 = Player.Name
-
-game:GetService("ReplicatedStorage").PlayerRemoteEvents.InvisblityEvent:FireServer(ohBoolean1, ohString2)
-
-local highlightClone = highlight:Clone()
-highlightClone.Adornee = Player.Character
-highlightClone.OutlineColor = Color3.new(0, 0.933333, 1)
-highlightClone.FillColor = Color3.new(0, 0.933333, 1)
-highlightClone.Parent = Player.Character:WaitForChild("HumanoidRootPart")
-	else
-        local ohBoolean1 = false
-local ohString2 = Player.Name
-
-game:GetService("ReplicatedStorage").PlayerRemoteEvents.InvisblityEvent:FireServer(ohBoolean1, ohString2)
-	    Player.Character.HumanoidRootPart.Highlight:Destroy()
-        end
-    end 
-})
